@@ -14,10 +14,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <Navbar />
-        {children}
+        <div className='container'>
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
       </body>
-      <Footer />
     </html>
   );
 }
