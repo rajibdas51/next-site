@@ -21,8 +21,9 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
+
+        <button className={styles.logout}>Logout</button>
       </div>
-      <button className={styles.logout}>Logout</button>
     </div>
   );
 };
