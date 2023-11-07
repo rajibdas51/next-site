@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './page.module.css';
 import Hero from '/public/hero.png';
+import Button from '@/components/Button/Button';
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -12,7 +13,7 @@ export default function Home() {
           Making your dreams come true. We gather experts from all around the
           world to help your ideas thrive.
         </p>
-        <button className={styles.button}>See Our Works</button>
+        <Button url='/portfolio' text='See Our Works' />
       </div>
       <div className={styles.item}>
         {' '}
