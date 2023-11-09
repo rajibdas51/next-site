@@ -1,3 +1,38 @@
 .container {
-  background-color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.contentImage {
+  flex: 1;
+}
+.contentInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+.contentTitle {
+  font-size: 40px;
+}
+.contentText {
+  font-size: 16px;
+}
+
+.img {
+  object-fit: cover;
+  width: 100%;
+}
+.author {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.authorName {
+  justify-content: center;
 }
