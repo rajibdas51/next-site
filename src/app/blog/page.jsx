@@ -8,7 +8,8 @@ async function getData() {
     next: { revalidate: 10 },
   });
   if (!res.ok) {
-    throw new Error('Failed to fetch Data!');
+    //throw new Error('Failed to fetch Data!');
+    return notFound();
   }
 
   return res.json();
