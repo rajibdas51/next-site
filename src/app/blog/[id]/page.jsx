@@ -3,7 +3,7 @@ import styles from './page.module.css';
 import Image from 'next/image';
 
 async function getData(id) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
     next: { revalidate: 10 },
   });
   if (!res.ok) {
@@ -12,6 +12,15 @@ async function getData(id) {
 
   return res.json();
 }
+
+export async function generateMetadata({ params }) {
+  const post = getData(params.id);
+  return {
+    title: post.title,
+    description: post.desc,
+  };
+}
+
 const BlogPost = async ({ params }) => {
   console.log(params.id);
   const data = await getData(params.id);
@@ -29,7 +38,7 @@ const BlogPost = async ({ params }) => {
               height={50}
               alt=''
             />
-            <h6 className={styles.authorName}>Daisy Lina</h6>
+            <h6 className={styles.authorName}>post</h6>
           </div>
         </div>
         <div className={styles.contentImage}>
